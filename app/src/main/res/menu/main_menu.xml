@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_delet"
+        android:title="Delet"
+
+    />
+    <item
+        android:id="@+id/menu_update"
+        android:title="Update"
+        />
+
+</menu>

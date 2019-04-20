@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Assignment2</string>
+    <string-array name="mainMenu">
+        <item>Duties</item>
+        <item>To do</item>
+        <item>Progress</item>
+    </string-array>
+</resources>
