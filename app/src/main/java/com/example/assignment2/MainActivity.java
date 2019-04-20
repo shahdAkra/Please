@@ -6,9 +6,16 @@ import android.widget.ListView;
 import android.widget.AdapterView;
 import android.view.View;
 import android.content.Intent;
+import android.widget.RatingBar;
+
+import android.widget.TextView;
+
+import android.widget.RatingBar.OnRatingBarChangeListener;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
+    private RatingBar ratingBar;
+    private TextView txtRatingValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(itemClickListener);
     }
-
+    public void OnRatingBar() {
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        txtRatingValue = (TextView) findViewById(R.id.txtRatingValue);
+        //if rating value is changed,
+        //display the current rating value in the result (textview) automatically
+        ratingBar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,boolean fromUser) {
+                txtRatingValue.setText(String.valueOf(rating));
+            }
+        });
+    }
 
 }
