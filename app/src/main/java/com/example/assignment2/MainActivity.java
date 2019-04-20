@@ -7,7 +7,8 @@ import android.widget.AdapterView;
 import android.view.View;
 import android.content.Intent;
 import android.widget.RatingBar;
-
+import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import android.widget.RatingBar.OnRatingBarChangeListener;
@@ -17,11 +18,22 @@ public class MainActivity extends AppCompatActivity {
     private RatingBar ratingBar;
     private TextView txtRatingValue;
 
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("lifeCycle","onCreateInvoked");
+
+
+
         listView = (ListView) findViewById(R.id.list);
+
+
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent,
@@ -45,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(itemClickListener);
     }
+
+    //rating bar code starts here
     public void OnRatingBar() {
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         txtRatingValue = (TextView) findViewById(R.id.txtRatingValue);
@@ -55,6 +69,47 @@ public class MainActivity extends AppCompatActivity {
                 txtRatingValue.setText(String.valueOf(rating));
             }
         });
+    }//end of rating bar code
+
+
+
+
+    //life cycle code starts here
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("lifeCycle","onStartInvoked");
+
     }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.d("lifeCycle","onResumeInvoked");
+
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d("lifeCylce", "onPauseInvoked");
+
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.d("lifecycle", "OnStopInvoked");
+    }
+
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d("lifecycle","onDestroyInvoked");
+
+    }
+
+    //life cycle code ends here
 
 }
