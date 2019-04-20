@@ -29,15 +29,16 @@ public class ToDo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do);
+        nameEdt = (EditText)findViewById(R.id.nameEdt);
+        descEdt =(EditText)findViewById(R.id.descEdt);
+        dateEdt = (EditText)findViewById(R.id.dateId);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu,menu);
-        nameEdt = (EditText)findViewById(R.id.nameEdt);
-        descEdt =(EditText)findViewById(R.id.descEdt);
-        dateEdt = (EditText)findViewById(R.id.dateId);
+
 
 
         return true;
@@ -48,10 +49,11 @@ public class ToDo extends AppCompatActivity {
 
         int id = item.getItemId();
         if (id==R.id.menu_delet){
+            delete();
 
         }
         else if (id==R.id.menu_update){
-
+                update();
         }
 
         return true;
@@ -137,6 +139,19 @@ public class ToDo extends AppCompatActivity {
     }
 
     //life cycle code ends here
+
+
+    public void onSaveInstaceState(Bundle outstate){
+        outstate.putString("name","assignment");
+        super.onSaveInstanceState(outstate);
+    }
+
+
+    public void onRestore(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+//        String name = savedInstanceState("name");
+    }
+
 
 
 
