@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Assignment2</string>
+    <string name="taxkdesedt">taxkDesEdt</string>
+    <string name="pick_time">pick_time</string>
+    <string name="insert_new_task">Insert New Task</string>
+    <string name="tasknadeedt">taskNadeEdt</string>
+    <string name="tasknametxt">taskNameTxt</string>
+    <string name="taskdesc">TaskDesc</string>
+    <string name="insert_date">Insert Date</string>
     <string-array name="mainMenu">
         <item>Duties</item>
         <item>To do</item>

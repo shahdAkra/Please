@@ -15,8 +15,6 @@ import android.widget.RatingBar.OnRatingBarChangeListener;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
-    private RatingBar ratingBar;
-    private TextView txtRatingValue;
 
 
 
@@ -58,18 +56,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(itemClickListener);
     }
 
-    //rating bar code starts here
-    public void OnRatingBar() {
-        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-        txtRatingValue = (TextView) findViewById(R.id.txtRatingValue);
-        //if rating value is changed,
-        //display the current rating value in the result (textview) automatically
-        ratingBar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-            public void onRatingChanged(RatingBar ratingBar, float rating,boolean fromUser) {
-                txtRatingValue.setText(String.valueOf(rating));
-            }
-        });
-    }//end of rating bar code
+
 
 
 
